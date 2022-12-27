@@ -1,0 +1,52 @@
+{
+    "cluster": "CLUSTE_ARN",
+    "serviceName": "SERVICE_NAME_STRING",
+    "taskDefinition": "TASK_ARN",
+    "loadBalancers": [
+        {
+            "targetGroupArn": "TARGET_GROUP_ARN,
+            "containerName": "CONTAINER_NAME_STRING",
+            "containerPort": PORT_NUMBER
+        },
+    ],
+    "serviceRegistries": [],
+    "desiredCount": 1,
+    "launchType": "FARGATE",
+    "platformVersion": "LATEST",
+    "deploymentConfiguration": {
+        "deploymentCircuitBreaker": {
+            "enable": false,
+            "rollback": false
+        },
+        "maximumPercent": 200,
+        "minimumHealthyPercent": 100
+    },
+    "placementConstraints": [],
+    "placementStrategy": [],
+    "networkConfiguration": {
+        "awsvpcConfiguration": {
+            "subnets": [
+                "SUBNETS_NAME_STRING",
+            ],
+            "securityGroups": [
+                "SECURITY_GROUP_NAME_STRING"
+            ],
+            "assignPublicIp": "ENABLED"
+        }
+    },
+    "healthCheckGracePeriodSeconds": 300,
+    "schedulingStrategy": "REPLICA",
+    "deploymentController": {
+        "type": "ECS"
+    },
+    "tags":[
+        {
+            "key": "chave",
+            "value": "valor"
+        }
+    ],
+    "enableECSManagedTags": true,
+    "propagateTags": "SERVICE",
+    "enableExecuteCommand": false
+
+}
